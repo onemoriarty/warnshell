@@ -33,3 +33,9 @@ WarNight Shell, WarNight Hack Team üyeleri için özel olarak tasarlanmış, PH
 ## Not
 
 Bu araç, sızma testleri ve yetkilendirilmiş güvenlik denetimleri gibi yasal amaçlar için tasarlanmıştır. Bu aracı yetkisiz erişim sağlamak veya kötü niyetli faaliyetlerde bulunmak için kullanmak yasa dışıdır.
+
+## ⭐ Destek Olun
+
+Projeyi faydalı bulduysanız lütfen bir ⭐ bırakmayı unutmayın.  
+Bu, geliştirmeye devam etmemiz için önemli bir motivasyon kaynağıdır.
+
