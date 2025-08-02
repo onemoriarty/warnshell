@@ -1,39 +1,35 @@
-# WarNight Shell
+# WarNight Shell (warnshell.php)
 
-## Açıklama
+## Genel Bakış
 
-WarNight Shell, web sunucularının kontrolünü ele geçirmek ve ele geçirilen web sitelerini yönetmek için tasarlanmış, kötü amaçlı bir web kabuğudur. Bu araç, sızma testleri veya yasa dışı faaliyetler sırasında bir sunucuya erişim sağlamak ve onu manipüle etmek için geniş bir dizi yetenek sunar.
+WarNight Shell, WarNight Hack Team üyeleri için özel olarak tasarlanmış, PHP ile yazılmış gelişmiş bir web kabuğudur. Bu araç, dosya yönetimi, komut çalıştırma, veritabanı etkileşimi ve çeşitli siber güvenlik araçları dahil olmak üzere geniş bir yelpazede işlevsellik sunar.
 
-## Tehlikeli Özellikler
+![WarNight Shell Arayüzü](https://cdn.discordapp.com/attachments/1400185555173769408/1401334575916912721/image.png?ex=688fe606&is=688e9486&hm=0c51650ac65a674fa48fdaba6a75cbd824a51384db7a39617cc41fc4abbebece&)
 
-WarNight Shell, bir web sunucusunu tam kontrol altına almak için tasarlanmış tehlikeli işlevler sunar:
+## Özellikler
 
-* **Kimlik Doğrulama Atlatma**: Varsayılan parola (`warnight`) ile basit bir kimlik doğrulama sağlar, bu da yetkisiz erişimi kolaylaştırır.
-* **Kontrol Paneli**: Sunucu yazılımı, IP adresi, PHP sürümü, işletim sistemi ve disk kullanımı gibi hassas sunucu bilgilerini ifşa eder.
-* **Komut Çalıştırma**: Sunucuda rastgele sistem komutlarının yürütülmesine izin vererek, saldırganın işletim sistemi düzeyinde kontrol sağlamasına olanak tanır.
-* **Dosya Yönetimi**:
-    * Dosyaları ve dizinleri gezme, silme, yeniden adlandırma, oluşturma ve yükleme yetenekleri ile sunucu dosyaları üzerinde tam kontrol sağlar.
-    * Dizinleri ZIP olarak indirme özelliği, hassas verilerin toplu olarak sızdırılmasına olanak tanır.
-* **Metin Düzenleyici**: Sunucudaki herhangi bir dosyanın içeriğini değiştirmeye izin vererek, web sitesi içeriğinin tahrif edilmesine veya kötü amaçlı kod eklenmesine olanak tanır.
-* **SQL İstemcisi**:
-    * Veritabanı bağlantılarını kurma ve SQL sorgularını çalıştırma yeteneği, web sitesinin veritabanına doğrudan erişim ve manipülasyon sağlar. Bu, kullanıcı verilerinin çalınmasına veya veritabanının silinmesine yol açabilir.
-    * Yaygın yapılandırma dosyalarından veritabanı kimlik bilgilerini otomatik olarak algılama özelliği, saldırganın işini kolaylaştırır.
-* **Hash Üretici**: Çeşitli algoritmalarla hash üretme yeteneği, parmak izi oluşturma veya ele geçirilen sistemlerdeki şifreleri kırmaya yardımcı olabilir.
-* **URL İndirici**: Harici bir URL'den dosyaları sunucuya indirme yeteneği, kötü amaçlı yazılımın veya diğer kötü amaçlı araçların sunucuya kolayca yerleştirilmesine izin verir.
-* **PHP Değerlendirici**: Rastgele PHP kodunu doğrudan sunucuda çalıştırma yeteneği, gelişmiş saldırılar, arka kapılar oluşturma veya sistemde kalıcılık sağlama için kritik bir özelliktir.
-* **E-posta Gönderici**: Sunucu üzerinden e-posta gönderme yeteneği, ele geçirilmiş sunucuyu kimlik avı saldırıları veya spam göndermek için kullanmaya izin verir.
-* **Port Tarayıcı**: Hedef IP adreslerindeki açık portları tarama özelliği, iç ağ keşfi veya diğer hedeflere yönelik saldırılar için kullanılabilir.
-* **Web Tarayıcısı (Proxy)**: Sunucuyu bir web proxy'si olarak kullanma yeteneği, saldırganın gerçek IP adresini gizlemesine ve dahili ağlara erişmesine yardımcı olabilir.
-* **Alan Bilgisi**: Alan adı WHOIS ve DNS bilgileri alma, hedefler hakkında istihbarat toplamak için kullanılabilir.
-* **Base64 Dönüştürücü**: Metinleri Base64 ile kodlama ve kod çözme, komutları veya veri yüklerini gizlemek için kullanılabilir.
-* **Discord Webhook Spammer**: Belirli bir Discord webhook URL'sine otomatik olarak mesaj gönderme yeteneği, rahatsız edici veya taciz edici amaçlar için kullanılabilir.
+* **Güvenli Erişim:** MD5 hash ile korunan parola tabanlı kimlik doğrulama sistemi bulunmaktadır. Parola `warnight` olarak ayarlanmıştır.
+* **Dosya Yöneticisi:** Sunucudaki dosyaları ve dizinleri listeleme, indirme, silme, yeniden adlandırma, düzenleme ve zip arşivi oluşturma gibi temel dosya yönetimi işlemleri sunar.
+* **Komut Çalıştırma:** `system`, `shell_exec`, `passthru` ve `exec` gibi PHP fonksiyonlarını kullanarak sunucuda komutlar çalıştırma imkanı tanır.
+* **Veritabanı İstemcisi:** `wp-config.php`, `configuration.php`, `.env` gibi yaygın yapılandırma dosyalarını tarayarak veritabanı kimlik bilgilerini bulabilir ve SQL sorguları çalıştırmaya olanak tanır.
+* **Gelişmiş Araçlar:**
+    * **Metin Düzenleyici:** Dosyaları doğrudan tarayıcı üzerinden düzenleyebilir.
+    * **URL'den Yükle:** Uzak bir URL'deki dosyayı sunucuya indirebilir.
+    * **PHP Değerlendirici:** PHP kodunu doğrudan çalıştırabilir.
+    * **Mail Gönderici:** Sunucu üzerinden e-posta gönderebilir.
+    * **Port Tarayıcı:** Belirlenen bir IP adresindeki açık portları tarayabilir.
+    * **Web Tarayıcı (Proxy):** Sunucuyu bir proxy gibi kullanarak web sayfalarının içeriğini çekebilir.
+    * **Hash Üretici & Base64 Çevirici:** Metinleri farklı algoritmalarla şifreleyebilir veya Base64 formatına dönüştürüp çözebilir.
+    * **Discord Spammer:** Belirtilen bir Discord webhook URL'sine otomatik mesajlar gönderebilir.
+* **Anonimlik:** HTTP başlıklarını (X-Forwarded-For, X-Real-IP vb.) rastgele oluşturarak anonimliği destekler.
 
-## Kurulum ve Riskler
+## Kullanım
 
-WarNight Shell'i kurmak için, `warnshell.php` dosyasını savunmasız bir web sunucusunun web erişilebilir bir dizinine yüklemeniz yeterlidir. Bu dosyanın bir sunucuda bulunması, ciddi bir güvenlik ihlali anlamına gelir.
+1.  `warnshell.php` dosyasını hedef web sunucusuna yükleyin.
+2.  Tarayıcınızdan `http://hedefsite.com/warnshell.php` adresine gidin.
+3.  Giriş sayfasında parola olarak `warnight` girin.
+4.  Giriş yaptıktan sonra, sol taraftaki menüyü kullanarak farklı işlevlere erişebilirsiniz.
 
-## Kötüye Kullanım
+## Not
 
-Bu araç, web sunucularını ele geçirmek, web sitelerini tahrif etmek, veri çalmak, kötü amaçlı yazılım dağıtmak ve sunucudan diğer ağlara saldırmak gibi kötü niyetli faaliyetler için tasarlanmıştır.
-
-**UYARI**: Bu belgede açıklanan bilgiler yalnızca eğitim amaçlıdır ve etik sızma testleri veya güvenlik araştırmaları için kullanılmalıdır. Yetkisiz erişim veya yasa dışı faaliyetler için bu aracı kullanmak, ilgili yasalara göre cezalandırılabilir.
+Bu araç, sızma testleri ve yetkilendirilmiş güvenlik denetimleri gibi yasal amaçlar için tasarlanmıştır. Bu aracı yetkisiz erişim sağlamak veya kötü niyetli faaliyetlerde bulunmak için kullanmak yasa dışıdır.
